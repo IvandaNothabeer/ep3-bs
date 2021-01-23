@@ -22,6 +22,7 @@ class BookingsFormat extends AbstractHelper
         $html .= '<th>' . $view->t('Date') . '</th>';
         $html .= '<th>' . $view->t('Time') . '</th>';
         $html .= '<th>' . $view->option('subject.square.type') . '</th>';
+        $html .= '<th>' . $view->t('Options') . '</th>';
         $html .= '<th class="notes-col">' . $view->t('Notes') . '</th>';
         $html .= '<th class="no-print">&nbsp;</th>';
         $html .= '</tr>';
