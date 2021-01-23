@@ -155,7 +155,7 @@ class SquareValidator extends AbstractService
         $squareTimeEnd->setTime($squareTimeEndParts[0], $squareTimeEndParts[1], $squareTimeEndParts[2]);
 
         if ($timeStart < $squareTimeStart || $timeEnd > $squareTimeEnd) {
-            throw new RuntimeException('The passed time range is invalid');
+            throw new RuntimeException('The booking is outside the allowed Start or End time');
         }
 
         /* Validate square time block bookable */

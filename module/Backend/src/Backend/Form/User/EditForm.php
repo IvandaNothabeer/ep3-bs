@@ -295,17 +295,17 @@ class EditForm extends Form
                         ),
                         'break_chain_on_failure' => true,
                     ),
-                    array(
-                        'name' => 'EmailAddress',
-                        'options' => array(
-                            'useMxCheck' => true,
-                            'message' => 'Please type the correct email address here',
-                            'messages' => array(
-                                'emailAddressInvalidMxRecord' => 'Could not verify the email provider',
-                            ),
-                        ),
-                        'break_chain_on_failure' => true,
-                    ),
+                    //array(
+                    //    'name' => 'EmailAddress',
+                    //    'options' => array(
+                    //        'useMxCheck' => true,
+                    //        'message' => 'Please type the correct email address here',
+                    //        'messages' => array(
+                    //            'emailAddressInvalidMxRecord' => 'Could not verify the email provider',
+                    //        ),
+                    //    ),
+                    //    'break_chain_on_failure' => true,
+                    //),
                     array(
                         'name' => 'Callback',
                         'options' => array(

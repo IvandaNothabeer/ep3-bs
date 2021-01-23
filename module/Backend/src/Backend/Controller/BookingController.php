@@ -19,10 +19,12 @@ class BookingController extends AbstractActionController
         $bookingManager = $serviceManager->get('Booking\Manager\BookingManager');
         $reservationManager = $serviceManager->get('Booking\Manager\ReservationManager');
         $userManager = $serviceManager->get('User\Manager\UserManager');
-
+        $billManager = $serviceManager->get('Booking\Manager\Booking\BillManager');
+        
         $bookings = array();
         $reservations = array();
-
+        $bills = array();
+        
         $dateStart = $this->params()->fromQuery('date-start');
         $dateEnd = $this->params()->fromQuery('date-end');
         $search = $this->params()->fromQuery('search');
@@ -33,6 +35,8 @@ class BookingController extends AbstractActionController
 
         if ($dateEnd) {
             $dateEnd = new \DateTime($dateEnd);
+            $dateEnd->modify('+1 day');
+            $dateEnd->modify('-1 second');            
         }
 
         if (($dateStart && $dateEnd) || $search) {
@@ -52,7 +56,9 @@ class BookingController extends AbstractActionController
                 $reservations = $reservationManager->getByBookings($bookings);
 
                 $userManager->getByBookings($bookings);
-            } catch (\RuntimeException $e) {
+                $billManager->getByBookings($bookings);
+                				
+			} catch (\RuntimeException $e) {
                 $bookings = array();
                 $reservations = array();
             }

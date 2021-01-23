@@ -67,9 +67,9 @@ class LoginForm extends Form
                         'name' => 'NotEmpty',
                         'break_chain_on_failure' => true,
                     ),
-                    array(
-                        'name' => 'EmailAddress',
-                    ),
+                    //array(
+                    //    'name' => 'EmailAddress',
+                    //),
                 ),
             ),
             'lf-submit' => array(

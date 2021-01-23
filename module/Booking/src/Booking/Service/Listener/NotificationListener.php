@@ -90,12 +90,7 @@ class NotificationListener extends AbstractListenerAggregate
                     $message .= sprintf("\n%s. %s",
                         $i + 1, $playerName['value']);
                 }
-            }
-        }
-
-        if ($square->get('allow_notes') && $booking->getMeta('notes')) {
-            $message .= "\n\nAnmerkungen:";
-            $message .= "\n" . $booking->getMeta('notes');
+			}
         }
 
         if ($user->getMeta('notification.bookings', 'true') == 'true') {

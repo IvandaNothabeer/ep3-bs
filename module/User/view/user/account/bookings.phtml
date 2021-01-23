@@ -78,8 +78,6 @@ $this->setup(array(
                     $cancellable = $this->squareValidator->isCancellable($booking);
                 }
 
-                $bills = $booking->getExtra('bills');
-
                 if ($bills) {
                     $price = 0;
 
