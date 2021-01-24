@@ -34,9 +34,10 @@ class DateRow extends AbstractHelper
 		$response = $client->dispatch($request);
 		$data = json_decode($response->getBody(), true);
 
+		$roster = '';
 		foreach($data as $event) 
 			foreach ($event as $key=>$value)
-				@$roster .= "$value: $key,   ";
+				$roster .= "$value: $key,   ";
 
 		return sprintf('<tr class="calendar-date-row %s"><td colspan="%s"><div class="day-label">%s</div><div class="date-label">%s</div><div class="day-label">%s</div></td></tr>',
 			$outerClasses, $colspan, $dayName, $dateFormat, $roster);
